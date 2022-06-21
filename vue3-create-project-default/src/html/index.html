@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+
+    Array.prototype.test = function () {
+      var _self = this;
+      _self = [... new Set(this.sort((a,b) => a - b))];
+      console.log(_self);
+      return _self;
+    }
+    var arr = [1,5,1,6,7,9,5,4,3,11,5];
+
+    // 这里有个问题：如果直接调用 arr.test() 让数组就改变，不需要返回接收
+    arr.test();
+    console.log(arr);
+  </script>
+</body>
+</html>
